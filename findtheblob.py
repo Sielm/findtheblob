@@ -95,8 +95,21 @@ def findColorSpot(picture, color):
 # 4-YELLOW
 
 ######################Code Starts Here##################################
+#findingblob
 
+def findingblob():
+    turnLeft(1,.5)
+    takePicture()
+    pic = takePicture()
+    show(pic)
 
+def scanred():
+    findColorSpot(pic,1)
+    x = findColorSpot(pic,1)
+    print(x)
+
+findingblob()
+scanred()
 
 
 
