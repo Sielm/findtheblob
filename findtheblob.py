@@ -95,7 +95,8 @@ def findColorSpot(picture, color):
 # 4-YELLOW
 
 ######################Code Starts Here##################################
-#findingblob
+
+#Defining functions
 
 def findingred():
     y = 1
@@ -109,9 +110,24 @@ def findingred():
             findColorSpot(pic,1)
             x = findColorSpot(pic,1)
             print(x)
-        if x > 100:
+        if x > 90:
             forward (4,1)
             
+def findinggreen():
+    y = 1
+    x = 1
+    while True:
+        if x < 100:
+            turnLeft(1,.5)
+            takePicture()
+            pic = takePicture()
+            show(pic)
+            findColorSpot(pic,2)
+            x = findColorSpot(pic,2)
+            print(x)
+        if x > 90:
+            forward (4,1)
+
 def findingblue():
     y = 1
     x = 1
@@ -121,10 +137,25 @@ def findingblue():
             takePicture()
             pic = takePicture()
             show(pic)
-            findColorSpot(pic,1)
-            x = findColorSpot(pic,1)
+            findColorSpot(pic,3)
+            x = findColorSpot(pic,3)
             print(x)
-        if x > 100:
+        if x > 90:
+            forward (4,1)
+
+def findingred():
+    y = 1
+    x = 1
+    while True:
+        if x < 100:
+            turnLeft(1,.5)
+            takePicture()
+            pic = takePicture()
+            show(pic)
+            findColorSpot(pic,4)
+            x = findColorSpot(pic,4)
+            print(x)
+        if x > 90:
             forward (4,1)
 #Actual Commands
 findingblue()
