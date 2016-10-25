@@ -143,7 +143,7 @@ def findingblue():
         if x > 90:
             forward (4,1)
 
-def findingred():
+def findingyellow():
     y = 1
     x = 1
     while True:
@@ -157,8 +157,13 @@ def findingred():
             print(x)
         if x > 90:
             forward (4,1)
+            
+def askquestion():
+    askQuestion("Find which blob?", ["red", "green", "blue", "yellow"])
 #Actual Commands
-findingblue()
+askquestion()
+if "find whcih blob?" is red:
+    findingred()
 
 
 
