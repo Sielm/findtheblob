@@ -159,12 +159,21 @@ def findingyellow():
             forward (4,1)
             
 def askquestion():
-    askQuestion("Find which blob?", ["red", "green", "blue", "yellow"])
+    askQuestion("Find which blob?", ["red", "green", "blue", "yellow", "reset"])
+    
 #Actual Commands
 askquestion()
-if "find whcih blob?" is red:
+if "red":
     findingred()
-
+if "green":
+    findinggreen()
+if "blue":
+    findingblue()
+if "yellow":
+    findingyellow()
+if "reset":
+    sim.setPose(0, width/2, height/2, 0)
+askquestion()
 
 
 
