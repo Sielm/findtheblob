@@ -111,8 +111,9 @@ def findingred():
             x = findColorSpot(pic,1)
             print(x)
         if x > 90:
-            forward (4,1)
-            
+            forward (4.5,1)
+            stop()
+              
 def findinggreen():
     y = 1
     x = 1
@@ -126,7 +127,8 @@ def findinggreen():
             x = findColorSpot(pic,2)
             print(x)
         if x > 90:
-            forward (4,1)
+            forward (4.5,1)
+            stop()
 
 def findingblue():
     y = 1
@@ -141,7 +143,8 @@ def findingblue():
             x = findColorSpot(pic,3)
             print(x)
         if x > 90:
-            forward (4,1)
+            forward (4.5,1)
+            stop()
 
 def findingyellow():
     y = 1
@@ -156,24 +159,27 @@ def findingyellow():
             x = findColorSpot(pic,4)
             print(x)
         if x > 90:
-            forward (4,1)
+            forward (4.5,1)
+            stop()
             
 def askquestion():
     askQuestion("Find which blob?", ["red", "green", "blue", "yellow", "reset"])
-    
+    answer = askQuestion("Find which blob?", ["red", "green", "blue", "yellow", "reset"])
+    if answer == "red":
+        findingred()
+    if answer == "green":
+        findinggreen()          
+    if answer == "blue":
+        findingblue()
+    if answer == "yellow":
+        findingyellow()
+    if answer == "reset":
+        sim.setPose(0, width/2, height/2, 0)
 #Actual Commands
+
 askquestion()
-if "red":
-    findingred()
-if "green":
-    findinggreen()
-if "blue":
-    findingblue()
-if "yellow":
-    findingyellow()
-if "reset":
-    sim.setPose(0, width/2, height/2, 0)
-askquestion()
+set (answer, "waiting")   
+askquestion() 
 
 
 
