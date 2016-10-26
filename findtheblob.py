@@ -99,69 +99,77 @@ def findColorSpot(picture, color):
 #Defining functions
 
 def findingred():
-    y = 1
     x = 1
-    while True:
-        if x < 100:
-            turnLeft(1,.5)
-            takePicture()
-            pic = takePicture()
-            show(pic)
-            findColorSpot(pic,1)
-            x = findColorSpot(pic,1)
-            print(x)
-        if x > 90:
-            forward (4.5,1)
-            stop()
-              
+    if x < 100:    
+        y = 1
+        while True:
+            if x < 90:        
+                turnLeft(1,.5)
+                takePicture()
+                pic = takePicture()
+                show(pic)
+                findColorSpot(pic,1)
+                x = findColorSpot(pic,1)
+                print(x)
+            if x > 90:
+                forward (6,1)
+                stop()
+                askquestion()
+               
 def findinggreen():
-    y = 1
-    x = 1
-    while True:
-        if x < 100:
-            turnLeft(1,.5)
-            takePicture()
-            pic = takePicture()
-            show(pic)
-            findColorSpot(pic,2)
-            x = findColorSpot(pic,2)
-            print(x)
-        if x > 90:
-            forward (4.5,1)
-            stop()
-
+   x = 1
+   if x < 100:    
+        y = 1
+        while True:
+            if x < 90:        
+                turnLeft(1,.5)
+                takePicture()
+                pic = takePicture()
+                show(pic)
+                findColorSpot(pic,2)
+                x = findColorSpot(pic,2)
+                print(x)
+            if x > 90:
+                forward (6,1)
+                stop()
+                askquestion()
+                
 def findingblue():
-    y = 1
-    x = 1
-    while True:
-        if x < 100:
-            turnLeft(1,.5)
-            takePicture()
-            pic = takePicture()
-            show(pic)
-            findColorSpot(pic,3)
-            x = findColorSpot(pic,3)
-            print(x)
-        if x > 90:
-            forward (4.5,1)
-            stop()
-
+   x = 1
+   if x < 100:    
+        y = 1
+        while True:
+            if x < 90:        
+                turnLeft(1,.5)
+                takePicture()
+                pic = takePicture()
+                show(pic)
+                findColorSpot(pic,3)
+                x = findColorSpot(pic,3)
+                print(x)
+            if x > 90:
+                forward (6,1)
+                stop()
+                askquestion()
+           
 def findingyellow():
-    y = 1
     x = 1
-    while True:
-        if x < 100:
-            turnLeft(1,.5)
-            takePicture()
-            pic = takePicture()
-            show(pic)
-            findColorSpot(pic,4)
-            x = findColorSpot(pic,4)
-            print(x)
-        if x > 90:
-            forward (4.5,1)
-            stop()
-            
+    if x < 100:    
+        y = 1
+        while True:
+            if x < 90:        
+                turnLeft(1,.5)
+                takePicture()
+                pic = takePicture()
+                show(pic)
+                findColorSpot(pic,4)
+                x = findColorSpot(pic,4)
+                print(x)
+            if x > 90:
+                forward (6,1)
+                stop()
+                askquestion()
+        
 def askquestion():
     askQuestion("Find which blob?", ["red", "green", "blue", "yellow", "reset"])
     answer = askQuestion("Find which blob?", ["red", "green", "blue", "yellow", "reset"])
@@ -174,12 +182,13 @@ def askquestion():
     if answer == "yellow":
         findingyellow()
     if answer == "reset":
+        stop()
         sim.setPose(0, width/2, height/2, 0)
-#Actual Commands
+        stop()
+        askquestion()
 
+#Actual Commands
 askquestion()
-set (answer, "waiting")   
-askquestion() 
 
 
 
